@@ -1,13 +1,13 @@
-﻿//Method Overriding Example in C#
-//Overriding is calling the derived class behaviour using a base class reference.
+﻿//Method Hiding Example in C#
+
 class Animal {
-    public virtual void Speak() {
+    public  void Speak() {
         Console.WriteLine("Animal Speaks!");
     }
 }
 
 class Dog : Animal {
-    public override void Speak()
+    public new void Speak()
     {
         Console.WriteLine("Dog Barks!");
     }
@@ -15,8 +15,8 @@ class Dog : Animal {
 
 class Program {
     public static void Main(string[] args) {
-        Animal a = new Animal();
-        Animal b = new Dog();
+        Animal a = new Dog();
+        Dog b = new Dog();
         a.Speak();  // Outputs: Animal Speaks!
         b.Speak();  // Outputs: Dog Barks!
     }
